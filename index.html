@@ -56,13 +56,7 @@ FB.ui({
 }, function(response){
   // Debug response (optional)
   console.log(response);
-});
-// Only works after `FB.init` is called
-function my() {
-   {scope: 'publish_actions'});
-}//hy
-
-
+});//hy
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
@@ -110,7 +104,7 @@ function my() {
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-<button onclick="my()">hi</button> <!--hy-->
+
 <div id="status">
 </div>
 
