@@ -16,17 +16,18 @@ Candy.Preloader.prototype = {
 		this.load.image('title', 'img/title.png');
 		this.load.image('game-over', 'img/gameover.png');
 
-	// Daisy: load flower image
-        this.load.image('flower1', 'img/rose.png');
-    // Daisy: test flower shop background
+        this.load.image('rose', 'img/rose.png');
+        this.load.image('lily', 'img/lily.png');
+        this.load.image('sunflower', 'img/sunflower.png');
+        this.load.image('carnation', 'img/carnation.png');
+
     	this.load.image('shopbackground', 'img/shopBG.png');
-    // Daisy: load button "next" for card
     	this.load.image('button-next', 'img/next.png');
 
 		this.load.image('score-bg', 'img/score-bg.png');
 		this.load.image('button-pause', 'img/button-pause.png');
 		// load spritesheets
-		this.load.spritesheet('candy', 'img/candy.png', 82, 98);
+		// this.load.spritesheet('candy', 'img/candy.png', 82, 98);
 		this.load.spritesheet('monster-idle', 'img/monster-idle.png', 103, 131);
 		this.load.spritesheet('button-start', 'img/button-start.png', 401, 143);
 	},

@@ -17,7 +17,7 @@ Candy.Game.prototype = {
 		this.physics.arcade.gravity.y = 200;
 		// display images: background, floor and score
 		this.add.sprite(0, 0, 'background');
-		this.add.sprite(-30, Candy.GAME_HEIGHT-160, 'floor');
+		// this.add.sprite(-30, Candy.GAME_HEIGHT-160, 'floor');
 		this.add.sprite(10, 5, 'score-bg');
 		// add pause button
 		this.add.button(Candy.GAME_WIDTH-96-20, 5, 'button-pause', this.managePause, this);
@@ -25,13 +25,14 @@ Candy.Game.prototype = {
 // Daisy: test image vadality
 		//this.add.button(Candy.GAME_WIDTH-96-20, 5, 'prompt-button', this.managePause, this);
 
-
+/*
 		// create the player
 		this._player = this.add.sprite(5, 760, 'monster-idle');
 		// add player animation
 		this._player.animations.add('idle', [0,1,2,3,4,5,6,7,8,9,10,11,12], 10, true);
 		// play the animation
 		this._player.animations.play('idle');
+*/
 		// set font style
 		this._fontStyle = { font: "40px Arial", fill: "#FFCC00", stroke: "#333", strokeThickness: 5, align: "center" };
 		// initialize the spawn timer
@@ -90,17 +91,31 @@ Candy.Game.prototype = {
 Candy.item = {
 	spawnCandy: function(game){
 		// calculate drop position (from 0 to game width) on the x axis
-		var dropPos = Math.floor(Math.random()*Candy.GAME_WIDTH);
+		var dropPos = Math.floor(Math.random()*(Candy.GAME_WIDTH-25)) + 10;
 		// define the offset for every candy
-		var dropOffset = [-27,-36,-36,-38,-48];
+		// var dropOffset = [-27,-36,-36,-38,-48]; 
 		// randomize candy type
-		var candyType = Math.floor(Math.random()*5);
+		var candyType = Math.floor(Math.random()*4);
 		// create new candy
-		var candy = game.add.sprite(dropPos, dropOffset[candyType], 'candy');
+		switch(candyType) {
+    		case 0:
+    		    var candy = game.add.sprite(dropPos, -20, 'rose');
+        		break;
+    		case 1:
+        		var candy = game.add.sprite(dropPos, -20, 'lily');
+        		break;
+        	case 2:
+        		var candy = game.add.sprite(dropPos, -20, 'sunflower');
+        		break;
+    		default:
+        		var candy = game.add.sprite(dropPos, -20, 'carnation');
+		}
+
+		// var candy = game.add.sprite(dropPos, -40, 'candy');
 		// add new animation frame
-		candy.animations.add('anim', [candyType], 10, true);
+		// candy.animations.add('anim', [candyType], 10, true);
 		// play the newly created animation
-		candy.animations.play('anim');
+		//candy.animations.play('anim');
 		// enable candy body for physic engine
 		game.physics.enable(candy, Phaser.Physics.ARCADE);
 		// enable candy to be clicked/tapped
@@ -130,6 +145,7 @@ Candy.item = {
 		// kill the candy
 		candy.kill();
 		// decrease player's health
+		console.log("hello");
 		Candy._health -= 10;
 	}
 };
