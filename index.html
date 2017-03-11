@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Facebook Login JavaScript Example</title>
+<title>Facebok Login JavaScript Example</title>
 <meta charset="UTF-8">
 </head>
 <body>
@@ -47,16 +47,11 @@
     version    : 'v2.8' // use graph api version 2.8
 
   });
-FB.ui({
-  method: 'share_open_graph',
-  action_type: 'og.likes',
-  action_properties: JSON.stringify({
-    object:'https://developers.facebook.com/docs/',
-  })
-}, function(response){
-  // Debug response (optional)
-  console.log(response);
-});//hy
+FB.ui(
+ {
+  method: 'share',
+  href: 'https://developers.facebook.com/docs/'
+}, function(response){});//hy
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
