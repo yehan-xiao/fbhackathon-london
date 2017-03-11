@@ -10,7 +10,7 @@ Candy.Preloader.prototype = {
 		this.preloadBar = this.add.sprite((Candy.GAME_WIDTH-311)/2, (Candy.GAME_HEIGHT-27)/2, 'preloaderBar');
 		this.load.setPreloadSprite(this.preloadBar);
 		// load images
-		this.load.image('background', 'img/background.png');
+		this.load.image('background', 'img/background1.jpg');
 		this.load.image('floor', 'img/floor.png');
 		this.load.image('monster-cover', 'img/monster-cover.png');
 		this.load.image('title', 'img/title.png');
