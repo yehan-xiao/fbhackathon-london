@@ -76,21 +76,14 @@ Candy.Game.prototype = {
 		});
 		// if the health of the player drops to 0, the player dies = game over
 		if(!Candy._health) {
-
-			// show flower shop after game
-
-// Daisy : Change state to Shop (using button)
-			//this.add.button(Candy.GAME_WIDTH-401-10, Candy.GAME_HEIGHT-143-80, 'button-next', this.gotoShop, this);	
-
-			//this.add.button(Candy.GAME_WIDTH-401-10, Candy.GAME_HEIGHT-143-10, 'button-start', this.gotoShop, this, 1, 0, 2);
-			this.add.button(Candy.GAME_WIDTH-401-10, Candy.GAME_HEIGHT-143-10, 'button-next', this.gotoShop, this);
+			this.add.sprite((Candy.GAME_WIDTH-594)/2, (Candy.GAME_HEIGHT-271)/2, 'game-over');
+			this.game.paused = true;
+			this.add.text(100, 200, "Tap anywhere to buy flowers.", this._fontStyle);
+			this.input.onDown.add(function(){
+				this.game.paused = false;
+				this.game.state.start('Shop');
+		    }, this);
 		}
-	},
-	gotoShop: function(){
-// Daisy : Add flower (show flower shop)
-
-        console.log("gotoShop");
-		this.game.state.start('Shop');
 	}
 };
 
