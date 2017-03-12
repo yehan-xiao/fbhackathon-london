@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Your Website Title</title>
+    <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+  <meta property="og:url"           content="http://www.baidu.com" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Test share" />
+  <meta property="og:description"   content="Your description" />
+  <meta property="og:image"         content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1489282788&di=d63d5f2143c0e6c15926121263c999c4&src=http://pic.58pic.com/58pic/13/04/21/31D58PICVAH.jpg" />
 </head>
 <body>
-  <div class="page-header">
-  <h1>Mobile Web Share Dialog</h1>
-</div>
 
-<p>Run this code on a mobile device or emulator. Tap the button below to trigger a Share Dialog</p>
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="shareBtn" class="btn btn-success clearfix">Share</div>
+  <!-- Your share button code -->
+<div class="fb-share-button" data-href="https://www.baidu.com" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.baidu.com%2F&amp;src=sdkpreparse">Share</a></div>
 
-<p style="margin-top: 50px">
-  <hr />
-  <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
-</p>
-
-<script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    method: 'share',
-    mobile_iframe: true,
-    href: 'google',
-  }, function(response){});
-}
-</script>
 </body>
 </html>
