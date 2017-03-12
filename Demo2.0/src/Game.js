@@ -22,14 +22,14 @@ Candy.Game.prototype = {
 		// add pause button
 		this.add.button(Candy.GAME_WIDTH-96-20, 5, 'button-pause', this.managePause, this);
 
-
+/*
 		// create the player
 		this._player = this.add.sprite(5, 800, 'waffle-idle');
 		// add player animation
 		this._player.animations.add('idle', [0,1,2,3], 10, true);
 		// play the animation
 		this._player.animations.play('idle');
-
+*/
 		// set font style
 		this._fontStyle = { font: "30px Arial", fill: "#FFCC00", stroke: "#333", strokeThickness: 5, align: "center" };
 		// initialize the spawn timer
@@ -75,7 +75,7 @@ Candy.Game.prototype = {
 		// if the health of the player drops to 0, the player dies = game over
 		if(!Candy._health) {
 			this.game.paused = true;
-			this.add.text(50, 200, "Game over.\n Tap anywhere to buy flowers.", this._fontStyle);
+			this.add.text(110, 200, "Game over.\n Tap anywhere to buy flowers.", this._fontStyle);
 			this.input.onDown.add(function(){
 				this.game.paused = false;
 				var score = Candy._score;
@@ -103,7 +103,7 @@ Candy.item = {
         		var candy = game.add.sprite(dropPos, -20, 'sunflower');
         		break;
     		default:
-        		var candy = game.add.sprite(dropPos, -20, 'carnation');
+        		var candy = game.add.sprite(dropPos, -20, 'daisy');
 		}
 
 		// var candy = game.add.sprite(dropPos, -40, 'candy');

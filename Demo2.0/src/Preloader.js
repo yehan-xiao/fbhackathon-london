@@ -21,7 +21,7 @@ Candy.Preloader.prototype = {
         this.load.image('rose', 'img/rose.png');
         this.load.image('lily', 'img/lily.png');
         this.load.image('sunflower', 'img/sunflower.png');
-        this.load.image('carnation', 'img/carnation.png');
+        this.load.image('daisy', 'img/daisy.png');
 
         // flower shop
         this.load.image('bouquet1', 'img/flower_shop01.png');
@@ -53,6 +53,7 @@ Candy.Preloader.prototype = {
 		// this.load.spritesheet('candy', 'img/candy.png', 82, 98);
 		this.load.spritesheet('waffle-idle', 'img/waffle-idle.png', 153, 131);
 		this.load.spritesheet('button-start', 'img/button-start.png', 401, 143);
+        this.load.spritesheet('button-next', 'img/button-next.png', 200,71);
 	},
 	create: function(){
 		// start the MainMenu state

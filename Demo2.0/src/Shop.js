@@ -29,7 +29,7 @@ Candy.Shop.prototype = {
 		// set font style
 		console.log(mymoney);
 		this._fontStyle = { font: "30px Arial", fill: "#FFA500", stroke: "#333", strokeThickness: 5, align: "center" };
-		var pausedText = this.add.text(50, 20, "Your score = " + mymoney + "\n Please select flower", this._fontStyle);
+		var pausedText = this.add.text(200, 10, "Your score = " + mymoney + "\n Please select flower", this._fontStyle);
 
 		// Candy._scoreText = this.add.text(455, 20, this.money, this._fontStyle);
 		//Candy._scoreText.setText((this.money1).toString());
@@ -50,7 +50,8 @@ Candy.Shop.prototype = {
 		lm.onInputDown.add(over5, this);
 		rm.onInputDown.add(over6, this);
 
-		this.add.button(Candy.GAME_WIDTH-301-150, Candy.GAME_HEIGHT-150, 'button-start', this.toCard, this);
+		//this.add.button(Candy.GAME_WIDTH-301-150, Candy.GAME_HEIGHT-150, 'button-start', this.toCard, this);
+		this.add.button(Candy.GAME_WIDTH-301-120, Candy.GAME_HEIGHT-80, 'button-next', this.toCard, this, 1, 0, 2);
 	},
 	toCard: function() {
 		// jump to card 

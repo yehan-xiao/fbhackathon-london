@@ -22,19 +22,16 @@ Candy.Game.prototype = {
 		// add pause button
 		this.add.button(Candy.GAME_WIDTH-96-20, 5, 'button-pause', this.managePause, this);
 
-// Daisy: test image vadality
-		//this.add.button(Candy.GAME_WIDTH-96-20, 5, 'prompt-button', this.managePause, this);
-
 /*
 		// create the player
-		this._player = this.add.sprite(5, 760, 'monster-idle');
+		this._player = this.add.sprite(5, 800, 'waffle-idle');
 		// add player animation
-		this._player.animations.add('idle', [0,1,2,3,4,5,6,7,8,9,10,11,12], 10, true);
+		this._player.animations.add('idle', [0,1,2,3], 10, true);
 		// play the animation
 		this._player.animations.play('idle');
 */
 		// set font style
-		this._fontStyle = { font: "40px Arial", fill: "#FFCC00", stroke: "#333", strokeThickness: 5, align: "center" };
+		this._fontStyle = { font: "30px Arial", fill: "#FFCC00", stroke: "#333", strokeThickness: 5, align: "center" };
 		// initialize the spawn timer
 		this._spawnCandyTimer = 0;
 		// initialize the score text with 0
@@ -77,13 +74,12 @@ Candy.Game.prototype = {
 		});
 		// if the health of the player drops to 0, the player dies = game over
 		if(!Candy._health) {
-			this.add.sprite((Candy.GAME_WIDTH-594)/2, (Candy.GAME_HEIGHT-271)/2, 'game-over');
 			this.game.paused = true;
-			this.add.text(100, 200, "Tap anywhere to buy flowers.", this._fontStyle);
+			this.add.text(110, 200, "Game over.\n Tap anywhere to buy flowers.", this._fontStyle);
 			this.input.onDown.add(function(){
 				this.game.paused = false;
-				// this.game.state.start('Shop');
-				window.location.href = "src/input.html";
+				var score = Candy._score;
+				this.game.state.start('Shop',true,false,score);
 		    }, this);
 		}
 	}
@@ -93,8 +89,6 @@ Candy.item = {
 	spawnCandy: function(game){
 		// calculate drop position (from 0 to game width) on the x axis
 		var dropPos = Math.floor(Math.random()*(Candy.GAME_WIDTH-25)) + 10;
-		// define the offset for every candy
-		// var dropOffset = [-27,-36,-36,-38,-48]; 
 		// randomize candy type
 		var candyType = Math.floor(Math.random()*4);
 		// create new candy
@@ -138,7 +132,7 @@ Candy.item = {
 		// kill the candy when it's clicked
 		candy.kill();
 		// add points to the score
-		Candy._score += 1;
+		Candy._score += 10;
 		// update score text
 		Candy._scoreText.setText(Candy._score);
 	},
