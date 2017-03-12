@@ -19,7 +19,7 @@ Candy.Preloader.prototype = {
         this.load.image('rose', 'img/rose.png');
         this.load.image('lily', 'img/lily.png');
         this.load.image('sunflower', 'img/sunflower.png');
-        this.load.image('carnation', 'img/carnation.png');
+        this.load.image('daisy', 'img/daisy.png');
 
     	this.load.image('shopbackground', 'img/shopBG.png');
     	this.load.image('button-next', 'img/next.png');

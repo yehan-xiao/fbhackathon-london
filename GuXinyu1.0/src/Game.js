@@ -108,7 +108,7 @@ Candy.item = {
         		var candy = game.add.sprite(dropPos, -20, 'sunflower');
         		break;
     		default:
-        		var candy = game.add.sprite(dropPos, -20, 'carnation');
+        		var candy = game.add.sprite(dropPos, -20, 'daisy');
 		}
 
 		// var candy = game.add.sprite(dropPos, -40, 'candy');
