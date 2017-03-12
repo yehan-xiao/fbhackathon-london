@@ -1,26 +1,57 @@
+//external String toString();
+var moneyy;
+var select;
 Candy.Shop = function(game){};
 Candy.Shop.prototype = {
+	
 	init: function(money){ 
-		console.log(money);
+		//var money1 = money + "haha?";
+		//var money2 = paserInt(money1) + "<br>";
+		//console.log(money1 + "haha?");
+
+		//var score = money.toString();
+
+		moneyy = money;
 	 },
 	create: function(){
 		// display shop store images
-		this.add.sprite(0, 0, 'shopbackground');
+		this.add.sprite(0, 0, 'shopbackground1');
 
+		// diaplay flower price
+		this.add.sprite(165, 310,'p30');
+		this.add.sprite(430, 310,'p30');
+		this.add.sprite(165, 550, 'p50');
+		this.add.sprite(430, 550, 'p60');
+
+		this.add.sprite(165, 700, 'p60');
+		this.add.sprite(430, 700, 'p100');
+
+		// score prompt
+		// set font style
+		console.log(moneyy);
+		this._fontStyle = { font: "30px Arial", fill: "#FFA500", stroke: "#333", strokeThickness: 5, align: "center" };
+		var pausedText = this.add.text(50, 20, "Congratulations! Your score = " + moneyy, this._fontStyle);
+
+		// Candy._scoreText = this.add.text(455, 20, this.money, this._fontStyle);
+		//Candy._scoreText.setText((this.money1).toString());
 		var group = this.add.group();
 
 		// add bouquets
-		var lu = this.add.button(Candy.GAME_WIDTH-401-150, Candy.GAME_HEIGHT-900, 'bouquet1', this.onUp, this, 2, 1, 0);
-		var ru = this.add.button(Candy.GAME_WIDTH-401+150, Candy.GAME_HEIGHT-900, 'bouquet2', this.onUp, this, 2, 1, 0);
-		var ld = this.add.button(Candy.GAME_WIDTH-401-150, Candy.GAME_HEIGHT-300, 'bouquet3', this.onUp, this, 2, 1, 0);
-		var rd = this.add.button(Candy.GAME_WIDTH-401+150, Candy.GAME_HEIGHT-300, 'bouquet4', this.onUp, this, 2, 1, 0);
+		var lu = this.add.button(Candy.GAME_WIDTH-401-150, Candy.GAME_HEIGHT-850, 'bouquet1', this.onUp, this, 2, 1, 0);
+		var ru = this.add.button(Candy.GAME_WIDTH-401+120, Candy.GAME_HEIGHT-850, 'bouquet2', this.onUp, this, 2, 1, 0);
+		var lm = this.add.button(Candy.GAME_WIDTH-401-150, Candy.GAME_HEIGHT-600, 'bouquet5', this.onUp, this, 2, 1, 0);
+		var rm = this.add.button(Candy.GAME_WIDTH-401+120, Candy.GAME_HEIGHT-600, 'bouquet6', this.onUp, this, 2, 1, 0);
+		var ld = this.add.button(Candy.GAME_WIDTH-401-150, Candy.GAME_HEIGHT-350, 'bouquet3', this.onUp, this, 2, 1, 0);
+		var rd = this.add.button(Candy.GAME_WIDTH-401+120, Candy.GAME_HEIGHT-350, 'bouquet4', this.onUp, this, 2, 1, 0);
 
 		lu.onInputDown.add(over1, this);
 		ru.onInputDown.add(over2, this);
 		ld.onInputDown.add(over3, this);
 		rd.onInputDown.add(over4, this);
+		lm.onInputDown.add(over5, this);
+		rm.onInputDown.add(over6, this);
 
-		this.add.button(Candy.GAME_WIDTH-401, Candy.GAME_HEIGHT-600, 'button-start', this.toCard, this);
+		this.add.button(Candy.GAME_WIDTH-301-150, Candy.GAME_HEIGHT-150, 'button-start', this.toCard, this);
 	},
 	toCard: function() {
 		// jump to card 
@@ -65,3 +96,20 @@ function over4(){
 	}, this);
 }
 
+function over5(){
+	// once user selects left-down image then cover it
+	var cover5 = this.add.sprite(Candy.GAME_WIDTH-401-150, Candy.GAME_HEIGHT-300,'bqcover');
+	
+	this.input.onDown.add(function(){
+		cover5.visible = false;
+	}, this);
+}
+
+function over6(){
+	// once user selects right-down image then cover it
+	var cover6 = this.add.sprite(Candy.GAME_WIDTH-401+150, Candy.GAME_HEIGHT-300,'bqcover');
+
+	this.input.onDown.add(function(){
+		cover6.visible = false;
+	}, this);
+}
