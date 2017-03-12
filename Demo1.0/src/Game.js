@@ -78,7 +78,8 @@ Candy.Game.prototype = {
 			this.add.text(100, 200, "Tap anywhere to buy flowers.", this._fontStyle);
 			this.input.onDown.add(function(){
 				this.game.paused = false;
-				this.game.state.start('Shop');
+				var score = Candy._score;
+				this.game.state.start('Shop',true,false,score);
 		    }, this);
 		}
 	}
@@ -131,7 +132,7 @@ Candy.item = {
 		// kill the candy when it's clicked
 		candy.kill();
 		// add points to the score
-		Candy._score += 1;
+		Candy._score += 10;
 		// update score text
 		Candy._scoreText.setText(Candy._score);
 	},

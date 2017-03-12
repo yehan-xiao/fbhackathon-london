@@ -1,5 +1,8 @@
 Candy.Shop = function(game){};
 Candy.Shop.prototype = {
+	init: function(money){ 
+		console.log(money);
+	 },
 	create: function(){
 		// display shop store images
 		this.add.sprite(0, 0, 'shopbackground');
