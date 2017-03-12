@@ -16,10 +16,18 @@ Candy.Preloader.prototype = {
 		this.load.image('title', 'img/title.png');
 		this.load.image('game-over', 'img/gameover.png');
 
+		// falling flowers
         this.load.image('rose', 'img/rose.png');
         this.load.image('lily', 'img/lily.png');
         this.load.image('sunflower', 'img/sunflower.png');
-        this.load.image('daisy', 'img/daisy.png');
+        this.load.image('carnation', 'img/carnation.png');
+
+        // flower shop
+        this.load.image('bouquet1', 'img/bouquet1.jpg');
+        this.load.image('bouquet2', 'img/bouquet2.jpg');
+        this.load.image('bouquet3', 'img/bouquet3.jpg');
+        this.load.image('bouquet4', 'img/bouquet4.jpeg');
+        this.load.image('bqcover', 'img/cover1.jpg');
 
     	this.load.image('shopbackground', 'img/shopBG.png');
     	this.load.image('button-next', 'img/next.png');
@@ -28,7 +36,7 @@ Candy.Preloader.prototype = {
 		this.load.image('button-pause', 'img/button-pause.png');
 		// load spritesheets
 		// this.load.spritesheet('candy', 'img/candy.png', 82, 98);
-		this.load.spritesheet('monster-idle', 'img/monster-idle.png', 103, 131);
+		this.load.spritesheet('waffle-idle', 'img/waffle-idle.png', 103, 131);
 		this.load.spritesheet('button-start', 'img/button-start.png', 401, 143);
 	},
 	create: function(){
