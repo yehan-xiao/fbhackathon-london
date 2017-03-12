@@ -1,0 +1,12 @@
+body { margin: 0; background: #B4D9E7; }
+
+image
+{
+    position:absolute;
+    width:592px; /*image width */
+    height:512px; /*image height */
+    left:50%; 
+    top:50%;
+    margin-left:-296px; /*image width/2 */
+    margin-top:-256px; /*image height/2 */
+}

@@ -78,7 +78,7 @@ Candy.Game.prototype = {
 			this.add.text(100, 200, "Tap anywhere to buy flowers.", this._fontStyle);
 			this.input.onDown.add(function(){
 				this.game.paused = false;
-				var score = Candy._score;
+				var score = Candy._scoreText;
 				this.game.state.start('Shop',true,false,score);
 		    }, this);
 		}

@@ -24,12 +24,22 @@ Candy.Preloader.prototype = {
         this.load.image('carnation', 'img/carnation.png');
 
         // flower shop
-        this.load.image('bouquet1', 'img/bouquet1.jpg');
-        this.load.image('bouquet2', 'img/bouquet2.jpg');
-        this.load.image('bouquet3', 'img/bouquet3.jpg');
-        this.load.image('bouquet4', 'img/bouquet4.jpeg');
+        this.load.image('bouquet1', 'img/flower_shop01.png');
+        this.load.image('bouquet2', 'img/flower_shop02.png');
+        this.load.image('bouquet3', 'img/flower_shop03.png');
+        this.load.image('bouquet4', 'img/flower_shop04.png');
+        this.load.image('bouquet5', 'img/flower_shop05.png');
+        this.load.image('bouquet6', 'img/flower_shop06.png');
+        // price icon
+        this.load.image('p30', 'img/price_30.png');
+        this.load.image('p50', 'img/price_50.png');
+        this.load.image('p60', 'img/price_60.png');
+        this.load.image('p100', 'img/price_100.png');
+        
+
         this.load.image('bqcover', 'img/cover1.jpg');
     	this.load.image('shopbackground', 'img/shopBG.png');
+    	this.load.image('shopbackground1', 'img/flower_shop_bg.png');
 
 		// load spritesheets
 		// this.load.spritesheet('candy', 'img/candy.png', 82, 98);
