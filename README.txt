@@ -1,5 +1,5 @@
 Flower For Mum demo is a simple HTML5 game created with Phaser.
-You can play the game at 
+You can play the game at: https://yehan-xiao.github.io/fbhackathon-london/
 
 # The Meaning of the game
 * Celebrate Mother's day
