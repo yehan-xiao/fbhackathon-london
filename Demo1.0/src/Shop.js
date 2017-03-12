@@ -23,8 +23,17 @@ Candy.Shop.prototype = {
 		ru.onInputDown.add(over2, this);
 		ld.onInputDown.add(over3, this);
 		rd.onInputDown.add(over4, this);
+
+		this.add.button(Candy.GAME_WIDTH-401, Candy.GAME_HEIGHT-600, 'button-start', this.toCard, this);
 	},
+	toCard: function() {
+		window.location.href = "src/input.html";
+		// start the Game state
+		//this.state.start('Game');
+	}
 };
+
+
 function over1(){
 	var cover1 = this.add.sprite(Candy.GAME_WIDTH-401-150, Candy.GAME_HEIGHT-900,'bqcover');
 	
